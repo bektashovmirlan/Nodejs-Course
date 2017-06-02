@@ -1,0 +1,132 @@
+<!-- <li><a href="/loadByCat/notebook"> category notebook </a></li>
+<li><a href="/loadByCat/phone"> category phone </a></li>
+<li><a href="/loadByCat/pc"> category PC </a></li> -->
+
+
+ <div class="container">
+    {{# each products}}        
+            <div class="shoes-grid" style="margin-top: 29px; margin-bottom: 29px; ">
+           
+                <div class="product-left" style="margin-bottom: 30px">
+                {{# each this}}
+                    <div class="col-md-4 chain-grid" style="width: 31.3%">
+                        <a href="#"><img class="img-responsive chain" src="{{ this.image }}" alt=" " /></a>
+                        <div class="grid-chain-bottom">
+                            <h9><a href="#">{{ this.title }}</a></h9>
+                            <div class="star-price">
+                                <div class="dolor-grid"> 
+                                    <span class="actual">{{ this.price }}$</span>
+                                </div>
+                                <a class="now-get get-cart" href="/add-to-cart/{{this._id}}">ADD TO CART</a> 
+                                <div class="clearfix"> </div>
+                            </div>
+                             <div class="clearfix"> </div>
+                        </div>
+                         <div class="clearfix"> </div>
+                    </div>
+                    {{/each}}
+                 </div> 
+                 <div class="clearfix"> </div>
+
+            </div>   
+          {{/each}}
+               <!--category menu-->
+
+               <div class="sub-cate">
+                <div class=" top-nav rsidebar span_1_of_left">
+                    <h3 class="cate">CATEGORIES</h3>
+         <ul class="menu">
+        <li class="item1"><a href="#">Сотовые<img class="arrow-img" src="images/arrow1.png" alt=""/> </a>
+            <ul class="cute">
+                <li class="subitem1"><a href="/loadByCat/Iphone"> Iphone </a></li>
+                <li class="subitem2"><a href="product.html"> Samsung </a></li>
+                <li class="subitem3"><a href="product.html"> Lenovo </a></li>
+            </ul>
+        </li>
+        <li class="item2"><a href="#">Ноутбуки<img class="arrow-img " src="images/arrow1.png" alt=""/></a>
+            <ul class="cute">
+                <li class="subitem1"><a href="product.html">Apple </a></li>
+                <li class="subitem2"><a href="product.html">Samsung </a></li>
+                <li class="subitem3"><a href="product.html">Dell </a></li>
+            </ul>
+        </li>
+        <li class="item3"><a href="#">Аксессуары<img class="arrow-img img-arrow" src="images/arrow1.png" alt=""/> </a>
+            <ul class="cute">
+                <li class="subitem1"><a href="product.html">Наушники </a></li>
+                <li class="subitem2"><a href="product.html">Usb Кабели </a></li>
+                <li class="subitem3"><a href="product.html">Батарейки</a></li>
+            </ul>
+        </li>
+        <li class="item4"><a href="#">Категория4<img class="arrow-img img-left-arrow" src="images/arrow1.png" alt=""/></a>
+            <ul class="cute">
+                <li class="subitem1"><a href="product.html">Cute Kittens </a></li>
+                <li class="subitem2"><a href="product.html">Strange Stuff </a></li>
+                <li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+            </ul>
+        </li>
+    </ul>
+                    </div>
+                <!--initiate accordion-->
+        <script type="text/javascript">
+            $(function() {
+                var menu_ul = $('.menu > li > ul'),
+                       menu_a  = $('.menu > li > a');
+                menu_ul.hide();
+                menu_a.click(function(e) {
+                    e.preventDefault();
+                    if(!$(this).hasClass('active')) {
+                        menu_a.removeClass('active');
+                        menu_ul.filter(':visible').slideUp('normal');
+                        $(this).addClass('active').next().stop(true,true).slideDown('normal');
+                    } else {
+                        $(this).removeClass('active');
+                        $(this).next().stop(true,true).slideUp('normal');
+                    }
+                });
+            
+            });
+        </script>
+                    <div class=" chain-grid menu-chain">
+                        <a href="single.html"><img class="img-responsive chain" src="images/wat.jpg" alt=" " /></a>                     
+                        <div class="grid-chain-bottom chain-watch">
+                            <span class="actual dolor-left-grid">300$</span>
+                            <span class="reducedfrom">500$</span>  
+                            <h6><a href="single.html">Original watchs</a></h6>                                                                            
+                        </div>
+                    </div>
+                     <a class="view-all all-product" href="/loadAllProducts">VIEW ALL PRODUCTS<span> </span></a>    
+            </div>
+                <div class="clearfix"> </div>    
+          
+ </div>
+    
+    <!---->
+
+
+
+
+<!--{{# each products }}
+<div class="container">
+   <div class="row" style="margin-bottom: 30px">
+    {{# each this }}
+               
+                <div class="product-left" style="margin-bottom: 30px">
+                    <div class="col-md-4 chain-grid" style="width: 21.5%">
+                        <a href="single.html"><img class="img-responsive chain" src="{{ this.image }}" alt=" " /></a>
+                        <div class="grid-chain-bottom">
+                            <h6><a href="single.html">{{ this.title }}</a></h6>
+                            <div class="star-price">
+                                <div class="dolor-grid"> 
+                                    <span class="actual">{{ this.price }}$</span>
+                                </div>
+                                <a class="now-get get-cart" href="#">ADD TO CART</a> 
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                
+     {{/each}}   
+  </div>
+</div>
+{{/each}}
